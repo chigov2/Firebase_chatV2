@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "392560302050",
+    "project_id": "fir-chat-e0680",
+    "storage_bucket": "fir-chat-e0680.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:392560302050:android:93f4f4dea40589adf48bbb",
+        "android_client_info": {
+          "package_name": "com.chigov.firebase_chat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "392560302050-vjshhn6ko10s0bq3ijgi6ndbf91ng8aq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.chigov.firebase_chat",
+            "certificate_hash": "89f411ed1f04bbd3397bb27b1d6eb612a1286b29"
+          }
+        },
+        {
+          "client_id": "392560302050-lbit245atsvc55ormmt0noothvev0dl9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBObBnJX9tC21meBq4wkO2XaWE9WKsyI1w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "392560302050-lbit245atsvc55ormmt0noothvev0dl9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
