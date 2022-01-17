@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -15,6 +16,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -36,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     //private List <Message> messages;
     private String author;
     FirebaseFirestore db;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +52,10 @@ public class MainActivity extends AppCompatActivity {
         recyclerViewMessages.setLayoutManager(new LinearLayoutManager(this));
         recyclerViewMessages.setAdapter(adapter);
         db = FirebaseFirestore.getInstance();
-        //messages = new ArrayList<>();
+
+        // Initialize Firebase Auth
+        mAuth = FirebaseAuth.getInstance();
+
         author = "Serge";
         imageViewSendMessage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,6 +76,15 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        //проверка
+        if (mAuth.getCurrentUser() != null){
+            Toast.makeText(this, "Logged!", Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(this, "Not registered!", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this,RegisterActivity.class);
+            startActivity(intent);
+        }
     }
 
     private void sendMessage(){
