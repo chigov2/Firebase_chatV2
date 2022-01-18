@@ -33,6 +33,7 @@ public class RegisterActivity extends AppCompatActivity {
         editTextEmail = findViewById(R.id.editTextEmail);
         editTextPassword = findViewById(R.id.editTextPassword);
         textViewHaveAnAccount = findViewById(R.id.textViewHaveAnAccount);
+
         textViewHaveAnAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,6 +58,7 @@ public class RegisterActivity extends AppCompatActivity {
                     startActivity(intent);
                 }else{
                     Toast.makeText(RegisterActivity.this,"error: "+task.getException(),Toast.LENGTH_SHORT).show();
+                    Log.i("test","error: " + task.getException());
                 }
             }
         });
